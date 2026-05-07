@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+
+    --bg:#070b14;
+    --bg2:#0f172a;
+
+    --card:#111827;
+
+    --border:rgba(255,255,255,0.08);
+
+    --text:#f8fafc;
+    --sub:#94a3b8;
+
+    --primary:#8b5cf6;
+    --primary2:#6366f1;
+
+    --shadow:
+    0 10px 40px rgba(0,0,0,0.45);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--bg),
+        var(--bg2)
+    );
+}
+
+/* =====================================================
+   LOGIN CARD
+===================================================== */
+
+.login-card{
+
+    width:420px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:
+    rgba(17,24,39,0.92);
+
+    border:
+    1px solid var(--border);
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp 0.8s ease;
+}
+
+/* GLOW */
+
+.login-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    top:-100px;
+    right:-100px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        rgba(139,92,246,0.2),
+        transparent 70%
+    );
+
+    animation:floatGlow 8s ease-in-out infinite;
+}
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.login-card h1{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ffffff,
+        #c4b5fd
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.login-card p{
+
+    color:var(--sub);
+
+    margin-bottom:25px;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+/* INPUT */
+
+input{
+
+    padding:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border:
+    1px solid rgba(255,255,255,0.05);
+
+    color:white;
+
+    font-size:15px;
+
+    transition:0.3s ease;
+}
+
+input:focus{
+
+    border:
+    1px solid rgba(139,92,246,0.4);
+
+    box-shadow:
+    0 0 0 4px rgba(139,92,246,0.12);
+}
+
+/* BUTTON */
+
+button{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary2)
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+    box-shadow:
+    0 10px 25px rgba(99,102,241,0.35);
+}
+
+button:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 18px 35px rgba(99,102,241,0.45);
+}
+
+/* =====================================================
+   LOGIN INFO
+===================================================== */
+
+.login-info{
+
+    margin-top:22px;
+
+    color:var(--sub);
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error{
+
+    background:
+    rgba(239,68,68,0.12);
+
+    color:#ffb4b4;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    margin-bottom:18px;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatGlow{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:500px){
+
+    .login-card{
+
+        width:92%;
+
+        padding:30px;
+    }
+}
